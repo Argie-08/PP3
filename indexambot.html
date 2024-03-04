@@ -216,7 +216,7 @@
       let searchInput = document.querySelector("#searchTerm");
 
       searchForm.addEventListener("submit", function (e) {
-        // e.preventDefault();
+        e.preventDefault();
 
         let url =
           "https://www.themealdb.com/api/json/v1/1/search.php?s=" +
