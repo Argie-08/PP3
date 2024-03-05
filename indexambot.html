@@ -58,7 +58,9 @@
       .searchBtn:hover {
         background-color: rgba(0, 0, 0, 1);
       }
-
+      input[type="text"]::-webkit-input-placeholder {
+        color: black;
+      }
       .logoImg {
         height: 100px;
       }
@@ -219,7 +221,6 @@
 
       <div class="row cardContainer mt-3"></div>
     </div>
-    <!-- Button trigger modal -->
 
     <!-- Modal -->
     <div
@@ -331,7 +332,6 @@
           cardTitle.classList.add("col-7");
           cardTitle.classList.add("m-0");
           cardTitle.classList.add("text-start");
-
           cardTitle.classList.add("mb-1");
 
           cardTitle.innerText = product.strMeal;
@@ -342,6 +342,9 @@
           cardSemiTitle.classList.add("m-0");
           cardSemiTitle.classList.add("mb-1");
           cardSemiTitle.classList.add("p-0");
+          cardSemiTitle.classList.add("pe-3");
+          cardSemiTitle.classList.add("d-flex");
+          cardSemiTitle.classList.add("justify-content-end");
 
           cardSemiTitle.innerText = product.strArea;
 
