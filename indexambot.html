@@ -86,6 +86,34 @@
       .fa-brands:hover {
         color: rgb(75, 74, 74);
       }
+      .container2 {
+        height: 60vh;
+        background-image: url(./Shakshuka-main-1.jpg);
+        background-size: cover;
+      }
+      .overlayHero {
+        background-color: rgba(0, 0, 0, 0.6);
+        height: 100%;
+      }
+      .buttonbtn {
+        padding: 0;
+      }
+      .titleTest {
+        font-weight: bold;
+        color: white;
+        font-size: 50px;
+        padding-left: 20px;
+        border: 0;
+      }
+      .buttonTest {
+        padding: 0.5rem;
+        margin-left: 20px;
+        border-radius: 0.3rem;
+        background-color: rgb(165, 63, 4);
+        color: white;
+        cursor: pointer;
+      }
+
       @media screen and (min-width: 992px) {
         .alignitem {
           display: flex;
@@ -185,7 +213,16 @@
     </nav>
     <section>
       <div class="hero">
-        <div class="container"></div>
+        <div class="container container2">
+          <div class="row overlayHero align-items-center m-auto">
+            <div class="col-12">
+              <p class="titleTest">WE'RE CRAVING</p>
+              <a href="#wego"
+                ><button class="buttonTest">See them all</button></a
+              >
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <section>
@@ -196,6 +233,7 @@
     <div class="container mt-3" id="home">
       <div
         class="row d-flex p-0 justify-content-center align-items-center cookingText"
+        id="wego"
       >
         <h4 class="col-12 col-md-4 text-center m-0">WHAT'S COOKING NOW?</h4>
         <form
