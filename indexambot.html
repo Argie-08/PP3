@@ -16,15 +16,12 @@
         box-sizing: border-box;
         margin: 0;
         padding: 0;
-        font-family: sans-serif;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 12px;
         /* border: dotted red 1px; */
       }
       body {
-        background-color: rgb(255, 240, 241);
-        background-image: url(./bckgrnd.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
+        background-color: rgba(0, 128, 128, 0.1);
       }
       .container1 {
         background-color: black;
@@ -40,37 +37,37 @@
         object-fit: cover;
       }
       .sticky-top {
-        height: 80px;
-        background-color: rgba(0, 0, 0, 0.8);
+        height: 70px;
+        background-color: rgb(19, 18, 18);
       }
 
       .searchArea {
         width: 100%;
         background-color: rgba(207, 206, 206, 0.5);
-        color: rgb(0, 0, 0);
+        padding-left: 1rem;
+        border: solid 1px rgba(0, 0, 0, 0.6);
+      }
+      input::placeholder {
+        color: rgba(0, 0, 0, 0.6);
       }
       .searchBtn {
-        /* width: 100px; */
-        background-color: rgba(59, 59, 59, 0.9);
-        border: 0;
+        background-color: #fd6914;
+        border-radius: 0;
         color: rgb(0, 0, 0);
       }
       .searchBtn:hover {
-        background-color: rgba(0, 0, 0, 1);
+        background-color: #c24802;
       }
-      input[type="text"]::-webkit-input-placeholder {
-        color: black;
-      }
+
       .logoImg {
-        height: 100px;
+        height: 80px;
       }
       .cardContainer .btn {
-        /* background-color: rgba(82, 192, 176, 255); */
         border: 0;
       }
       .cookingText {
         color: white;
-        background-color: rgba(0, 0, 0, 0.9);
+        border: solid 2px rgb(0, 0, 0);
         padding: 0.5rem;
       }
       .footer {
@@ -82,18 +79,29 @@
       }
       .fa-brands {
         cursor: pointer;
+        transition: 0.2s;
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.8);
       }
       .fa-brands:hover {
-        color: rgb(75, 74, 74);
+        color: #fd6914;
       }
-      .container2 {
+      .hero {
         height: 60vh;
         background-image: url(./Shakshuka-main-1.jpg);
         background-size: cover;
+        width: 100%;
+        padding: 0;
+        position: relative;
       }
-      .overlayHero {
+
+      .herOverlay {
         background-color: rgba(0, 0, 0, 0.6);
         height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
       }
       .buttonbtn {
         padding: 0;
@@ -105,16 +113,154 @@
         padding-left: 20px;
         border: 0;
       }
-      .buttonTest {
+
+      .footerText {
+        padding-left: 12px;
+      }
+      .heroText {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .heroFont {
+        font-size: 4rem;
+        font-weight: 800;
+        color: #fff;
+        z-index: 1;
+      }
+      .heroSub {
+        max-width: 40%;
+        border: solid 2px #fff;
+        z-index: 1;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .cookText {
+        color: rgb(0, 0, 0);
+      }
+      .formHeight {
+        height: 3rem;
+        width: 100%;
+      }
+      .popBtn {
+        height: 3rem;
+        margin-top: 3px;
+      }
+      .fa-magnifying-glass {
+        font-size: 1.3rem;
+      }
+      .recipeBtn {
+        background: #fd6914;
+        color: #fff;
+        font-weight: 600;
+        border-radius: 0;
+        box-shadow: 0px 5px 5px rgb(0, 0, 0, 0.3);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
+      .recipeBtn:hover {
+        background-color: #c24802;
+        color: #fff;
+        font-weight: 600;
+      }
+      .cardShadow {
+        filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.3));
+      }
+      .pagination a {
+        border: 0;
+        color: rgb(0, 0, 0);
+        font-weight: 600;
         padding: 0.5rem;
-        margin-left: 20px;
-        border-radius: 0.3rem;
-        background-color: rgb(165, 63, 4);
-        color: white;
+        text-decoration: none;
         cursor: pointer;
       }
-      .footerText {
-        font-size: 10px;
+
+      .pagination a:hover {
+        color: #fd6914;
+      }
+      .modal-header {
+        background: #fd6914;
+      }
+
+      .modal-footer button:hover {
+        background: #fd691431;
+      }
+
+      .logText {
+        text-decoration: none;
+        cursor: pointer;
+        position: relative;
+      }
+
+      .logText::after {
+        content: "";
+        background: #fd6914;
+        height: 1px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: 0.3s;
+        transform: scaleX(0);
+        transform-origin: left;
+      }
+      .logText:hover::after {
+        transform: scaleX(1);
+      }
+      .fa-user {
+        background-color: #fd6914;
+        padding: 0.5rem;
+        border-radius: 50%;
+      }
+
+      .navAddress {
+        text-decoration: none;
+        cursor: pointer;
+        position: relative;
+      }
+      .navAddress::after {
+        content: "";
+        background: #fd6914;
+        height: 1px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: 0.3s;
+        margin-bottom: -0.4rem;
+
+        transform: scaleX(0);
+        transform-origin: left;
+      }
+      .navAddress:hover::after {
+        transform: scaleX(1);
+      }
+
+      @media screen {
+        #printSection {
+          display: none;
+        }
+      }
+
+      @media print {
+        body * {
+          visibility: hidden;
+        }
+        #printSection,
+        #printSection * {
+          visibility: visible;
+        }
+        #printSection {
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
       }
 
       @media screen and (min-width: 992px) {
@@ -162,105 +308,96 @@
           /></a>
           <h3>Take'up Cooking!</h3>
         </div>
-        <div class="d-flex align-items-center gap-2">
-          <i class="fa-brands fa-facebook"></i>
-          <i class="fa-brands fa-instagram"></i>
-          <i class="fa-brands fa-youtube"></i>
-          <i class="fa-brands fa-tiktok"></i>
+        <div class="d-flex align-items-center gap-3">
+          <a class="fa-brands fa-facebook" href="https://facebook.com"></a>
+          <a class="fa-brands fa-instagram" href="https://instagram.com"></a>
+          <a class="fa-brands fa-youtube" href="https://youtube.com"></a>
+          <a class="fa-brands fa-tiktok" href="https://tiktok.com"></a>
         </div>
       </div>
     </div>
     <nav class="navbar navbar-expand-lg sticky-top">
       <div class="container">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarTogglerDemo01"
-          aria-controls="navbarTogglerDemo01"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+        <div
+          class="collapse navbar-collapse gap-4 d-flex justify-content-between align-items-center"
+          id="navbarTogglerDemo01"
         >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse gap-4" id="navbarTogglerDemo01">
-          <li class="nav-item d-flex align-items-center">
-            <a
-              class="nav-link active text-white"
-              aria-current="page"
-              href="#"
-              onclick="window.location.reload()"
-              >HOME</a
-            >
+          <li class="nav-item d-flex align-items-center gap-5">
+            <a class="navAddress text-white">HOME</a>
+            <a class="navAddress text-white">ABOUT US</a>
           </li>
-
-          <li class="nav-item dropdown d-flex align-items-center">
-            <a
-              class="nav-link dropdown-toggle text-white"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              RECIPES
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">PORK</a></li>
-              <li><a class="dropdown-item" href="#">CHICKEN</a></li>
-              <li><a class="dropdown-item" href="#">SEAFOOD</a></li>
-              <li><a class="dropdown-item" href="#">BEEF</a></li>
-            </ul>
-          </li>
+          <div class="d-flex gap-3">
+            <i class="fa-solid fa-user text-white fs-4 p-2"></i>
+            <a class="text-white logText d-flex align-items-center">Log In</a>
+          </div>
         </div>
       </div>
     </nav>
     <section>
       <div class="hero">
-        <div class="container container2">
-          <div class="row overlayHero align-items-center m-auto">
-            <div class="col-12">
-              <p class="titleTest">WE'RE CRAVING</p>
-              <a href="#wego"
-                ><button class="buttonTest">See them all</button></a
-              >
-            </div>
+        <div class="container heroText">
+          <p class="heroFont">WE'RE CRAVING!</p>
+          <div class="heroSub p-3">
+            <p class="m-0 fs-3">Our Favorite Fresh-Baked Lasagna</p>
+            <p class="m-0">These recipes are almost as sweet as Mom!</p>
+          </div>
+        </div>
+        <div class="herOverlay"></div>
+      </div>
+    </section>
+    <div class="container mt-5" id="home">
+      <div class="row gap-5 cookingText d-flex justify-content-center py-4">
+        <div class="col-10 col-md-6 p-0 test1">
+          <h4 class="m-0 cookText mb-3">WHAT WOULD YOU LIKE TO COOK?</h4>
+          <form class="w-100 d-flex formHeight" role="search" id="search">
+            <input
+              type="text"
+              class="w-100 searchArea"
+              placeholder="Search Here . . ."
+              id="searchTerm"
+            />
+            <button class="btn searchBtn text-white" type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </div>
+        <div class="col-10 col-md-5 test2">
+          <p class="text-dark fw-bold">Popular searches:</p>
+          <div id="categoryBtn">
+            <button class="btn searchBtn popBtn text-white" value="Pork">
+              PORK
+            </button>
+            <button class="btn searchBtn popBtn text-white" value="Beef">
+              BEEF
+            </button>
+            <button class="btn searchBtn popBtn text-white" value="Seafood">
+              SEAFOOD
+            </button>
+            <button class="btn searchBtn popBtn text-white" value="Chicken">
+              CHICKEN
+            </button>
+            <button class="btn searchBtn popBtn text-white" value="Vegetarian">
+              VEGETARIAN
+            </button>
           </div>
         </div>
       </div>
-    </section>
-    <section>
-      <main>
-        <div class="container d-flex"></div>
-      </main>
-    </section>
-    <div class="container mt-3" id="home">
       <div
-        class="row d-flex p-0 justify-content-center align-items-center cookingText"
-        id="wego"
-      >
-        <h4 class="col-12 col-md-4 text-center m-0">WHAT'S COOKING NOW?</h4>
-        <form
-          class="col-12 col-md-8 d-flex gap-2 p-0"
-          role="search"
-          id="search"
-        >
-          <div class="row w-100 d-flex align-items-center alignitem">
-            <div class="col-8">
-              <input
-                type="text"
-                placeholder="Search Here"
-                class="searchArea my-2 ps-2"
-                id="searchTerm"
-              />
-            </div>
-            <div class="col-2">
-              <button class="searchBtn text-white" type="submit">Search</button>
-            </div>
-          </div>
-        </form>
-      </div>
-
-      <div class="row cardContainer mt-3"></div>
+        class="row d-flex p-0 justify-content-center align-items-center"
+      ></div>
+      <div class="row cardContainer mt-5"></div>
+    </div>
+    <div class="container">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination gap-4 d-flex justify-content-end">
+          <a class="page-item" id="prevBtn" href="#home">
+            <i class="fa-solid fa-arrow-left-long"></i> Previous
+          </a>
+          <a class="page-item" id="nextBtn" href="#home">
+            Next <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+        </ul>
+      </nav>
     </div>
 
     <!-- Modal -->
@@ -273,7 +410,7 @@
     >
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-          <div class="modal-header bg-dark">
+          <div class="modal-header">
             <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">
               Recipe | Ingredients:
             </h1>
@@ -288,10 +425,11 @@
           <div class="modal-footer">
             <button
               type="button"
-              class="btn btn-secondary"
+              class="btn"
               data-bs-dismiss="modal"
+              id="printContent"
             >
-              Close
+              Print <i class="fa-solid fa-print"></i>
             </button>
           </div>
         </div>
@@ -316,32 +454,43 @@
       src="https://kit.fontawesome.com/d19315b440.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
+      const productContainer = document.querySelector(".cardContainer");
+      const categoryBtn = document.getElementById("categoryBtn");
       let searchForm = document.querySelector("#search");
       let searchInput = document.querySelector("#searchTerm");
 
+      //pagination variables
+      var recipeData = [];
+      let itemPerPage = 8;
+      let currentPage = 1;
+      let totalItems = 0;
+
       searchForm.addEventListener("submit", function (e) {
         e.preventDefault();
-
         let url =
           "https://www.themealdb.com/api/json/v1/1/search.php?s=" +
           searchInput.value;
         store(url);
       });
 
-      const productContainer = document.querySelector(".cardContainer");
-      // const modalDetails = document.querySelector(".modal-body");
-
       async function store(
         url = "https://www.themealdb.com/api/json/v1/1/search.php?s="
       ) {
         const response = await fetch(url);
         const data = await response.json();
-        console.log(data.meals);
+        recipeData = data.meals;
 
         productContainer.innerHTML = "";
 
-        data.meals.forEach((product) => {
+        //pagination starts here//
+
+        const iLast = currentPage * itemPerPage;
+        const iFirst = iLast - itemPerPage;
+        const LimitRecipe = recipeData.slice(iFirst, iLast); //use variable to map the slice/limited data
+
+        LimitRecipe.forEach((product) => {
           let column = document.createElement("div");
           column.classList.add("col-sm-12");
           column.classList.add("col-md-6");
@@ -351,8 +500,7 @@
           let card = document.createElement("div");
           card.classList.add("card");
           card.classList.add("h-100");
-          card.classList.add("border");
-          card.classList.add("border-secondary");
+          card.classList.add("cardShadow");
 
           let cardImg = document.createElement("img");
           cardImg.classList.add("card-img-top");
@@ -361,7 +509,6 @@
 
           let cardBody = document.createElement("div");
           cardBody.classList.add("card-body");
-          cardBody.classList.add("bg-dark-subtle");
 
           let titleRow = document.createElement("div");
           titleRow.classList.add("row");
@@ -371,13 +518,12 @@
 
           let cardTitle = document.createElement("p");
           cardTitle.classList.add("card-title");
-          cardTitle.classList.add("fs-4");
           cardTitle.classList.add("col-7");
           cardTitle.classList.add("m-0");
           cardTitle.classList.add("text-start");
           cardTitle.classList.add("mb-1");
 
-          cardTitle.innerText = product.strMeal;
+          cardTitle.innerText = product.strCategory;
 
           let cardSemiTitle = document.createElement("p");
           cardSemiTitle.classList.add("card-title");
@@ -389,26 +535,29 @@
           cardSemiTitle.classList.add("d-flex");
           cardSemiTitle.classList.add("justify-content-end");
 
-          cardSemiTitle.innerText = product.strArea;
+          cardSemiTitle.innerText = `Origin: ${product.strArea}`;
 
           let cardText = document.createElement("p");
           cardText.classList.add("card-text");
           cardText.classList.add("mb-3");
+          cardText.classList.add("fs-3");
+          cardText.classList.add("fw-bold");
+          cardText.classList.add("mb-5");
 
-          cardText.innerText = product.strCategory;
+          cardText.innerText = product.strMeal;
 
           let btnLink = document.createElement("a");
           btnLink.classList.add("btn");
-          btnLink.classList.add("btn-primary");
+          btnLink.classList.add("recipeBtn");
           btnLink.classList.add("d-flex");
           btnLink.classList.add("justify-content-center");
-          btnLink.classList.add("bg-dark");
           btnLink.dataset.bsToggle = "modal";
           btnLink.dataset.bsTarget = "#exampleModal";
           btnLink.innerText = "View Recipe";
 
           btnLink.addEventListener("click", () => {
             const modalBody = document.querySelector(".modal-body");
+            modalBody.innerHTML = "";
             const modalDetails = document.createElement("p");
 
             modalDetails.innerText = product.strInstructions;
@@ -416,35 +565,60 @@
             modalBody.append(modalDetails);
           });
 
-          // let modalBody = document.createElement("p");
-
-          // modalBody.innerText = product.strInstructions;
-
           titleRow.append(cardTitle, cardSemiTitle);
           cardBody.append(titleRow, cardText, btnLink);
           card.append(cardImg, cardBody);
           column.append(card);
           productContainer.append(column);
-          // modalDetails.append(modalBody);
         });
       }
-
       store();
+
+      categoryBtn.addEventListener("click", function (e) {
+        let url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${e.target.value}`;
+        store(url);
+      });
+
+      //pagination buttons//
+      const prevButton = () => {
+        if ((currentPage - 1) * itemPerPage) {
+          currentPage--;
+          store();
+        }
+      };
+
+      const nextButton = () => {
+        if ((currentPage * itemPerPage) / recipeData) {
+          currentPage++;
+          store();
+        }
+        currentPage++;
+        store();
+      };
+
+      document.getElementById("prevBtn").addEventListener("click", prevButton);
+      document.getElementById("nextBtn").addEventListener("click", nextButton);
+
+      //print modal section
+      document.getElementById("printContent").onclick = function () {
+        printElement(document.querySelector(".modal-body"));
+      };
+
+      function printElement(elem) {
+        var pageClone = elem.cloneNode(true);
+
+        var $printSection = document.getElementById("printSection");
+
+        if (!$printSection) {
+          var $printSection = document.createElement("div");
+          $printSection.id = "printSection";
+          document.body.appendChild($printSection);
+        }
+
+        $printSection.innerHTML = "";
+        $printSection.appendChild(pageClone);
+        window.print();
+      }
     </script>
-    <div class="row">
-      <div class="col">
-        <div class="card">
-          <img src="" alt="" />
-          <div class="cardbody">
-            <div class="row">
-              <div class="col-4 cardtitle"></div>
-              <div class="c0l-4 cardplace"></div>
-            </div>
-            <div class="cardtext"></div>
-            <button></button>
-          </div>
-        </div>
-      </div>
-    </div>
   </body>
 </html>
