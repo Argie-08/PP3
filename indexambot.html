@@ -211,7 +211,7 @@
       .logText:hover::after {
         transform: scaleX(1);
       }
-      .fa-user {
+      .fa-logIn {
         background-color: #fd6914;
         padding: 0.5rem;
         border-radius: 50%;
@@ -238,6 +238,55 @@
       }
       .navAddress:hover::after {
         transform: scaleX(1);
+      }
+      .about {
+        font-weight: 700;
+      }
+      .lineBtn {
+        border-bottom: solid 1px rgba(0, 0, 0, 0.6);
+      }
+      .modal-content form {
+        height: 100%;
+        border-radius: 5px;
+        padding: 70px;
+        box-shadow: 0px 10px 20px 10px rgba(0, 0, 0, 0.8);
+      }
+      .formStatic {
+        position: relative;
+      }
+      .fa-iconLog {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 20px;
+        padding-top: 10px;
+        padding-left: 10px;
+      }
+      .formStatic input {
+        padding-left: 40px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        border-radius: 12px;
+      }
+      .btn-orange {
+        background: #fd6914;
+        font-weight: 700;
+        transition: 0.5s;
+        border-radius: 12px;
+      }
+      .btn-orange:hover {
+        background: #d45810;
+      }
+      form a {
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        transition: 0.5s;
+      }
+      form:hover a {
+        text-decoration: underline;
+      }
+      .modalbg {
+        background: rgba(255, 255, 255, 0.6);
       }
 
       @media screen {
@@ -300,7 +349,7 @@
   <body>
     <div class="header">
       <div class="container d-flex justify-content-between">
-        <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center" id="home">
           <a href="" onclick="window.location.reload()"
             ><img src="./logo3.png" alt="" class="logoImg"
           /></a>
@@ -321,12 +370,17 @@
           id="navbarTogglerDemo01"
         >
           <li class="nav-item d-flex align-items-center gap-5">
-            <a class="navAddress text-white">HOME</a>
-            <a class="navAddress text-white">ABOUT US</a>
+            <a class="navAddress text-white" href="#home">HOME</a>
+            <a class="navAddress text-white" href="#about">ABOUT US</a>
           </li>
           <div class="d-flex gap-3">
-            <i class="fa-solid fa-user text-white fs-4 p-2"></i>
-            <a class="text-white logText d-flex align-items-center">Log In</a>
+            <i class="fa-solid fa-user text-white fs-4 p-2 fa-logIn"></i>
+            <a
+              class="text-white logText d-flex align-items-center"
+              data-bs-toggle="modal"
+              data-bs-target="#logIn"
+              >Log In</a
+            >
           </div>
         </div>
       </div>
@@ -385,7 +439,7 @@
       ></div>
       <div class="row cardContainer mt-5"></div>
     </div>
-    <div class="container">
+    <div class="container lineBtn">
       <nav aria-label="Page navigation example">
         <ul class="pagination gap-4 d-flex justify-content-end">
           <a class="page-item" id="prevBtn">
@@ -396,6 +450,27 @@
           </a>
         </ul>
       </nav>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+          <h2 class="about my-5" id="about">ABOUT US</h2>
+        </div>
+        <div class="col-12">
+          <p class="text-center">
+            <b>Take'Up Cooking</b> is my little corner of the internet! I'm the
+            voice, author, and creator behind Take'Up Cooking. What started as a
+            casual hobby over 14 years ago in 2010 while I was working as a
+            fourth grade teacher has now grown into a full-blown business that
+            <b>reaches millions of people</b> with fun recipes each month, with
+            content that has been
+            <b>featured on various show, website and more</b> . I live in Saint
+            Paul, MN with my husband Bjork and our dog Sage. My favorite things
+            in life are a big plate of pad Thai, sunny days, and going to the
+            dog park.
+          </p>
+        </div>
+      </div>
     </div>
 
     <!-- Modal -->
@@ -430,6 +505,44 @@
               Print <i class="fa-solid fa-print"></i>
             </button>
           </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="logIn"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modalbg">
+          <form>
+            <h2 class="text-center mb-5">Take'Up Cooking</h2>
+            <div class="d-flex flex-column gap-3">
+              <div class="formStatic">
+                <input
+                  type="text"
+                  placeholder="Username"
+                  class="w-100"
+                  required
+                />
+                <i class="fa-regular fa-user fa-iconLog"></i>
+              </div>
+              <div class="formStatic">
+                <input
+                  type="text"
+                  placeholder="Password"
+                  class="w-100"
+                  required
+                />
+                <i class="fa-solid fa-lock fa-iconLog"></i>
+              </div>
+              <a class="d-flex justify-content-end" href="">Forgot password?</a>
+              <button type="submit" class="btn btn-orange mt-5">Sign-In</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
